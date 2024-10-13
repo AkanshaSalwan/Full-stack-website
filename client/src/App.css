@@ -23,19 +23,19 @@ body{font-family: 'Lato', sans-serif !important; font-size: 22px !important; }
 form .btn-g .MuiCircularProgress-root{width: 25px !important; height: 25px !important;}
 form .btn-g .MuiCircularProgress-root svg{color: #fff !important;}
 .btn-g a{color: #fff !important; text-decoration: none !important;}
-.btn-g{background: #35ac75 !important;
+.btn-g{background: #597cff !important;
   padding: 7px 21px !important;
   border-radius: 5px !important;
   color: #fff !important;
   text-transform: capitalize !important;
   font-size: 12px !important;}
   
-.btn-g:hover,button.bg-g:hover{background: #e53840 !important;}
+.btn-g:hover,button.bg-g:hover{background: #8c38e5 !important;}
 .btn-lg{font-size: 16px !important;
   padding: 6px 17px !important;}
-.bg-g,.bg-success{background: #35ac75 !important;}
+.bg-g,.bg-success{background: #597cff !important;}
 
-.text-g{color: #35ac75;}
+.text-g{color: #597cff;}
 .text-org{color: #FDC040 !important;}
 h1.text-light,h2.text-light,h3.text-light,h4.text-light,h5.text-light,h6.text-light,p.text-light,span.text-light,div.text-light{color: #8b8b8b !important;}
 p{color: #7E7E7E;}
