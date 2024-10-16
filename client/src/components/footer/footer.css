@@ -15,12 +15,12 @@ footer{padding: 40px 0px; padding-bottom: 0px;}
 
 footer .part1 img{width: 150px !important; height: auto !important;}
 
-footer .part1 svg{color: #35ac75  !important;}
+footer .part1 svg{color: #597cff  !important;}
 
 footer  h3{color: #000; font-weight: 600; margin-bottom: 18px; font-size: 16px;}
 footer .part2 ul li{list-style: none; margin-bottom: 3px;}
 footer .part2 ul li a{color:#000; opacity: 0.8; font-size: 500; transition: all 0.2s ease-in-out; font-size: 14px;}
-footer .part2 ul li a:hover{text-decoration: none;color: #24935f  !important; opacity: 1; padding-left: 5px;}
+footer .part2 ul li a:hover{text-decoration: none;color: #597cff  !important; opacity: 1; padding-left: 5px;}
 
 footer .lastStrip{padding: 5px 0px;}
 
@@ -30,6 +30,6 @@ footer .lastStrip{padding: 5px 0px;}
 
 footer .lastStrip .part3 h5{margin-bottom: 0px; font-size: 18px;}
 footer .lastStrip .part3 ul{margin-bottom: 0px; padding-left: 25px;}
-footer .lastStrip .part3 ul li a{display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; background: #35ac75  ; border-radius: 50%; transition: all 0.2s ease-in-out !important;}
+footer .lastStrip .part3 ul li a{display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; background: #597cff ; border-radius: 50%; transition: all 0.2s ease-in-out !important;}
 footer .lastStrip .part3 ul li a svg{color: #fff !important; font-size: 20px;}
 footer .lastStrip .part3 ul li a:hover{background:rgb(51, 51, 51);}

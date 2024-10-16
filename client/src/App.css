@@ -18,7 +18,7 @@ body{font-family: 'Lato', sans-serif !important; font-size: 22px !important; }
 .btn{border-radius: 8px !important;}
 .btn-border{border: 1px solid rgba(0,0,0,0.1) !important; padding: 10px 25px !important; border-radius: 5px !important; color: #000 !important;}
 .btn-border svg{opacity: 0.5;}
-.btn-border:hover{border: 1px solid #35ac75 !important; background: #35ac75 !important; color: #fff !important;}
+.btn-border:hover{border: 1px solid #597cff !important; background: #597cff !important; color: #fff !important;}
 .btn-border:hover svg{opacity: 1 !important;}
 form .btn-g .MuiCircularProgress-root{width: 25px !important; height: 25px !important;}
 form .btn-g .MuiCircularProgress-root svg{color: #fff !important;}
@@ -83,7 +83,7 @@ p{color: #7E7E7E;}
     padding: 1ch 1.5ch;
     border-radius: .3ch;
     box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, 0.35);
-    background: #3bb77e;
+    background: #597cff;
     color: #fff;
     z-index: 1000; /* absurdity 2 */
   }
@@ -105,7 +105,7 @@ p{color: #7E7E7E;}
   [tooltip][flow^="up"]::before {
     bottom: 100%;
     border-bottom-width: 0;
-    border-top-color: #3bb77e;
+    border-top-color: #597cff;
   }
   [tooltip]:not([flow])::after,
   [tooltip][flow^="up"]::after {
@@ -152,7 +152,7 @@ p{color: #7E7E7E;}
   [tooltip][flow^="right"]::before {
     top: 50%;
     border-left-width: 0;
-    border-right-color: #3bb77e;
+    border-right-color: #597cff;
     right: calc(0em - 5px);
     transform: translate(.5em, -50%);
   }
@@ -272,11 +272,11 @@ ul.breadcrumb li+li:before {
   content: "/\00a0";
 }
 ul.breadcrumb li a {
-  color: #3bb77e;
+  color: #597cff;
   text-decoration: none !important;
 }
 ul.breadcrumb li a:hover {
-  color: #3bb77e;
+  color: #597cff;
   text-decoration: underline;
 }
 
@@ -306,7 +306,7 @@ ul.breadcrumb li a:hover {
   .zoomSlider *{outline: none !important;}
   .zoomSlider .item{border: 2px solid #e4e4e4 !important; overflow: hidden; border-radius: 10px; cursor: pointer; padding: 3px; height: 80px;}
   .zoomSlider .item img{height: 100% !important; object-fit: cover !important;}
-  .zoomSlider .slick-current .item{border: 2px solid #3bb77e !important; }
+  .zoomSlider .slick-current .item{border: 2px solid #597cff !important; }
   .zoomSlider .slick-arrow{top: 55% !important; zoom: 80% !important;}
   .zoomSlider .slick-arrow.slick-next{right: -2% !important;}
   .zoomSlider .slick-arrow.slick-prev{left: -5% !important;}
@@ -319,7 +319,7 @@ ul.breadcrumb li a:hover {
   .productSize ul.error a{border: 1px solid red !important; }
   .productSize ul li a:hover{background: #f1f1f1;}
   
-  .productSize ul li a.active{background: #3bb77e !important; color: #fff !important;}
+  .productSize ul li a.active{background: #597cff !important; color: #fff !important;}
 
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -334,7 +334,7 @@ ul.breadcrumb li a:hover {
 
 
   .addCartSection{height: auto;}
-  .addCartSection .counterSec{width: 90px; height: 45px; border-radius: 10px; border: 1px solid #3bb77e !important; overflow: hidden; padding: 10px;}
+  .addCartSection .counterSec{width: 90px; height: 45px; border-radius: 10px; border: 1px solid #597cff!important; overflow: hidden; padding: 10px;}
   .addCartSection .counterSec input{width:45px; height: 40px; padding: 5px; border: 0px; outline: none !important; text-align: center; pointer-events: none; position: relative; top: -8px; font-size: 15px;}
 
   .addCartSection .counterSec{position: relative;}
@@ -374,7 +374,7 @@ text-align: center; font-size: 17px;}
   .customTabs ul li{margin-right: 30px !important;}
   .customTabs ul li button{padding: 7px 25px !important; border: 1px solid rgba(0,0,0,0.2) !important; font-size: 14px !important; text-transform: capitalize !important; border-radius: 30px !important; color: #000 !important;}
 
-  .customTabs ul li button.active{color: #3bb77e !important;}
+  .customTabs ul li button.active{color: #597cff !important;}
 
   .customTabs .tabContent tr th, .customTabs .tabContent tr td{font-size: 13px; vertical-align: middle; padding:10px 10px !important;}
 
