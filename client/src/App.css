@@ -33,7 +33,7 @@ form .btn-g .MuiCircularProgress-root svg{color: #fff !important;}
 .btn-g:hover,button.bg-g:hover{background: #8c38e5 !important;}
 .btn-lg{font-size: 16px !important;
   padding: 6px 17px !important;}
-.bg-g,.bg-success{background: #597cff !important;}
+.bg-g,.bg-primary{background: #597cff !important;}
 
 .text-g{color: #597cff;}
 .text-org{color: #FDC040 !important;}

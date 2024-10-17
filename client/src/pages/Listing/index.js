@@ -179,7 +179,7 @@ const Listing = (props) => {
               <div className="col-md-9 rightContent homeProducts pt-0">
                 <div className="topStrip d-flex align-items-center">
                   <p className="mb-0">
-                    We found <span className="text-success">{productData?.products?.length>0 && productData?.products?.length}</span> items for
+                    We found <span className="text-primary">{productData?.products?.length>0 && productData?.products?.length}</span> items for
                     you!
                   </p>
                 </div>

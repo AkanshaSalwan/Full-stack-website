@@ -144,7 +144,7 @@ const closeNav = () => {
                       <span>
                         <Link to={"/cart"}>
                           <ShoppingCartOutlinedIcon />
-                          <span className="badge bg-success rounded-circle">
+                          <span className="badge bg-primary rounded-circle">
                             {context.cartItems.length}
                           </span>
                           Cart
@@ -203,7 +203,7 @@ const closeNav = () => {
                         <Link to="/myList">
                           <span>
                             <FavoriteBorderOutlinedIcon />
-                            <span className="badge bg-success rounded-circle">
+                            <span className="badge bg-primary  rounded-circle">
                               {context?.myListData?.length}
                             </span>
                             Wishlist
@@ -214,7 +214,7 @@ const closeNav = () => {
                         <span>
                           <Link to={"/cart"}>
                             <ShoppingCartOutlinedIcon />
-                            <span className="badge bg-success rounded-circle">
+                            <span className="badge bg-primary rounded-circle">
                               {context.cartItems.length}
                             </span>
                             Cart

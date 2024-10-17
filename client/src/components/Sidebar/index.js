@@ -81,10 +81,10 @@ const Sidebar = (props) => {
 
           <div className="d-flex pt-2 pb-2 priceRange">
             <span>
-              From: <strong className="text-success">Rs: {value[0]}</strong>
+              From: <strong className="text-primary">Rs: {value[0]}</strong>
             </span>
             <span className="ml-auto">
-              From: <strong className="text-success">Rs: {value[1]}</strong>
+              From: <strong className="text-primary">Rs: {value[1]}</strong>
             </span>
           </div>
 
