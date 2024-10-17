@@ -422,7 +422,7 @@ text-align: center; font-size: 17px;}
 
 .filterTab li{margin-left: 20px; position: relative;}
 .filterTab li a{color: #000; text-decoration: none; font-size: 14px; transition: all 0.3s ease-in-out; position: relative; font-weight: 600;}
-.filterTab li:hover a, .filterTab li a.act{color: #3bb77e !important; transform: translateY(-10px); }
+.filterTab li:hover a, .filterTab li a.act{color: #597cff !important; transform: translateY(-10px); }
 
 .homeProducts .productRow{ display: flex; padding: 30px 0px; padding-top: 15px; margin: 0px -15px; flex-wrap: wrap;}
 .homeProducts .productRow.loading{opacity: 0.5; filter: blur(5px);}
@@ -449,12 +449,12 @@ text-align: center; font-size: 17px;}
 .slick-prev:before{content: "\f104" !important; font-family: FontAwesome !important; font-size: 30px !important; color: #000 !important;}
 .slick-next:before{content: "\f105" !important; font-family: FontAwesome !important; font-size: 30px !important; color: #000 !important;}
 
-.slick-arrow:hover{background: #3bb77e !important;}
+.slick-arrow:hover{background: #597cff !important;}
 .slick-arrow:hover::before{color: #fff !important;}
 
 .home_slider_Main .slick-dots{position: absolute; bottom: 30px !important;}
 .home_slider_Main .slick-dots button::before{width: 6px !important; height: 6px !important; font-size: 18px !important;}
-.slick-active button::before{color: #3bb77e !important;}
+.slick-active button::before{color: #597cff !important;}
 
 
 
