@@ -74,7 +74,7 @@ const Sidebar = (props) => {
           <RangeSlider
             value={value}
             onInput={setValue}
-            min={100}
+            min={10}
             max={60000}
             step={5}
           />
