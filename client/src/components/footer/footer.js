@@ -276,7 +276,7 @@ const Footer = () => {
             <div className="row lastStrip">
               <div className="col-md-6 part_1 d-flex align-items-center">
                 <p className="mb-0">
-                  © 2024, Ecommerce Template All rights reserved
+                  ©2024.AkanshaSalwan All rights reserved
                 </p>
               </div>
 
