@@ -8,7 +8,7 @@ import HeadphonesOutlinedIcon from "@mui/icons-material/HeadphonesOutlined";
 import { useState } from "react";
 import { MyContext } from "../../../App";
 import { Category } from "@mui/icons-material";
-import Logo from "../../../assets/images/logo.jpeg";
+import Logo from "../../../assets/images/logo.jpg";
 import Select from "../../selectDrop/select";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 

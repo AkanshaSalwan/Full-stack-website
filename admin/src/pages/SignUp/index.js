@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import Logo from "../../assets/images/logo.png";
+import Logo from "../../assets/images/logo.jpg";
 import patern from "../../assets/images/pattern.webp";
 import { MyContext } from "../../App";
 import { MdEmail } from "react-icons/md";
