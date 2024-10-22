@@ -42,7 +42,7 @@ const Home = (props) => {
     dots: false,
     infinite: context.windowWidth < 992 ? false : true,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     fade: false,
     arrows: context.windowWidth < 992 ? false : true,
@@ -172,17 +172,17 @@ const Home = (props) => {
       
 
 
-  
+  <br />
       <section className='homeProducts homeProductsRow2 pt-0'>
       <div className='container-fluid'>
           <div className='d-flex align-items-center'>
               <h2 className='hd mb-0 mt-0'>Featured Products</h2>
 
           </div>
-
+<br />
      
-          <div className='row mt-3'>
-              <div className='col-md-9'>
+          <div className='row mt-6'>
+              <div className='col-md-12'>
                   <Slider {...settings} className='prodSlider'>
 
                       {

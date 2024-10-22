@@ -62,6 +62,8 @@ const Footer = () => {
         </div>
       </section>
 
+<br />
+ 
       <div className="footerWrapper">
         <div className="footerBoxes">
           <div className="container-fluid">
