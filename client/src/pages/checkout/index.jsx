@@ -1,6 +1,4 @@
-import { Button } from "@mui/material";
-import TextField from "@mui/material/TextField";
-
+import { Button, Radio, RadioGroup, FormControlLabel, TextField } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { MyContext } from "../../App";
 import { useNavigate } from "react-router-dom";
@@ -20,6 +18,7 @@ const Checkout = () => {
   });
   const [cartData, setCartData] = useState([]);
   const [totalAmount, setTotalAmount] = useState();
+  const [paymentMethod, setPaymentMethod] = useState("COD"); // Default to Cash on Delivery
 
   const context = useContext(MyContext);
   const history = useNavigate();
@@ -50,7 +49,7 @@ const Checkout = () => {
   const payNow = (e) => {
     e.preventDefault();
 
-     if (formFields.fullName === "") {
+    if (formFields.fullName === "") {
       context.setAlertBox({
         open: true,
         error: true,
@@ -73,15 +72,6 @@ const Checkout = () => {
         open: true,
         error: true,
         msg: "Please fill Street address",
-      });
-      return false;
-    }
-
-    if (formFields.streetAddressLine2 === "") {
-      context.setAlertBox({
-        open: true,
-        error: true,
-        msg: "Please fill  Street address",
       });
       return false;
     }
@@ -131,11 +121,28 @@ const Checkout = () => {
       return false;
     }
 
-    const addressInfo = {
+    // Check payment method
+    if (paymentMethod === "ONLINE") {
+      context.setAlertBox({
+        open: true,
+        error: true,
+        msg: "Online payment is currently not available. Please select Cash on Delivery.",
+      });
+      return;
+    }
+
+    // Handle Cash on Delivery order
+    const user = JSON.parse(localStorage.getItem("user"));
+    const payLoad = {
       name: formFields.fullName,
       phoneNumber: formFields.phoneNumber,
       address: formFields.streetAddressLine1 + formFields.streetAddressLine2,
       pincode: formFields.zipCode,
+      amount: parseInt(totalAmount),
+      paymentId: "COD",
+      email: user.email,
+      userid: user.userId,
+      products: cartData,
       date: new Date().toLocaleString("en-US", {
         month: "short",
         day: "2-digit",
@@ -143,62 +150,18 @@ const Checkout = () => {
       }),
     };
 
-  
-    var options = {
-      key: process.env.REACT_APP_RAZORPAY_KEY_ID,
-      key_secret: process.env.REACT_APP_RAZORPAY_KEY_SECRET,
-      amount: parseInt(totalAmount * 100),
-      currency: "INR",
-      order_receipt: "order_rcptid_" + formFields.fullName,
-      name: "E-Bharat",
-      description: "for testing purpose",
-      handler: function (response) {
-        console.log(response);
-
-        const paymentId = response.razorpay_payment_id;
-
-        const user = JSON.parse(localStorage.getItem("user"));
-
-        const payLoad = {
-          name: addressInfo.name,
-          phoneNumber: formFields.phoneNumber,
-          address: addressInfo.address,
-          pincode: addressInfo.pincode,
-          amount: parseInt(totalAmount),
-          paymentId: paymentId,
-          email: user.email,
-          userid: user.userId,
-          products: cartData,
-          date:addressInfo?.date
-        };
-
-        console.log(payLoad)
-          
-
-        postData(`/api/orders/create`, payLoad).then((res) => {
-             fetchDataFromApi(`/api/cart?userId=${user?.userId}`).then((res) => {
-            res?.length!==0 && res?.map((item)=>{
-                deleteData(`/api/cart/${item?.id}`).then((res) => {
-                })    
-            })
-                setTimeout(()=>{
-                    context.getCartData();
-                },1000);
-                history("/orders");
+    postData(`/api/orders/create`, payLoad).then((res) => {
+      fetchDataFromApi(`/api/cart?userId=${user?.userId}`).then((res) => {
+        res?.length !== 0 &&
+          res?.map((item) => {
+            deleteData(`/api/cart/${item?.id}`).then(() => {});
           });
-         
-        });
-      },
-
-      theme: {
-        color: "#3399cc",
-      },
-    };
-
-    var pay = new window.Razorpay(options);
-    pay.open();
-
-
+        setTimeout(() => {
+          context.getCartData();
+        }, 1000);
+        history("/orders");
+      });
+    });
   };
 
   return (
@@ -345,65 +308,73 @@ const Checkout = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Payment method selection */}
+              <h4 className="hd mt-4">Payment Method</h4>
+              <RadioGroup
+                aria-label="paymentMethod"
+                value={paymentMethod}
+                onChange={(e) => setPaymentMethod(e.target.value)}
+              >
+                <FormControlLabel value="COD" control={<Radio />} label="Cash on Delivery (COD)" />
+                <FormControlLabel value="ONLINE" control={<Radio />} label="Online Payment" />
+              </RadioGroup>
             </div>
 
-            <div className="col-md-4 cartRightBox ">
-              <div className="card orderInfo">
-                <h4 className="hd">YOUR ORDER</h4>
-                <div className="table-responsive mt-3">
-                  <table className="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th>Product</th>
-                        <th>Subtotal</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      {cartData?.length !== 0 &&
-                        cartData?.map((item, index) => {
-                          return (
-                            <tr>
-                              <td>
-                                {item?.productTitle?.substr(0, 20) + "..."}{" "}
-                                <b>× {item?.quantity}</b>
-                              </td>
-
-                              <td>
-                                {item?.subTotal?.toLocaleString("en-US", {
-                                  style: "currency",
-                                  currency: "INR",
-                                })}
-                              </td>
-                            </tr>
-                          );
-                        })}
-
-                      <tr>
-                        <td>Subtotal </td>
-
-                        <td>
-                          {(cartData?.length !== 0
-                            ? cartData
-                                ?.map(
-                                  (item) => parseInt(item.price) * item.quantity
-                                )
-                                .reduce((total, value) => total + value, 0)
-                            : 0
-                          )?.toLocaleString("en-US", {
-                            style: "currency",
-                            currency: "INR",
-                          })}
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <Button type="submit" className="btn-g btn-lg w-100">
-                  Checkout
-                </Button>
+            <div className="col-md-4">
+              <div className="table-responsive border-bottom">
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th>Product</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cartData &&
+                      cartData.length !== 0 &&
+                      cartData?.map((item) => {
+                        return (
+                          <tr key={item.id}>
+                            <td>
+                              {item.title} x {item.quantity}
+                            </td>
+                            <td>
+                              <i className="fa fa-inr"></i>
+                              {parseInt(item.price) * item.quantity}
+                            </td>
+                          </tr>
+                        );
+                      })}
+                  </tbody>
+                </table>
               </div>
+
+              <div className="table-responsive border-bottom">
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th>Subtotal</th>
+                      <th>
+                        <i className="fa fa-inr"></i>
+                        {totalAmount}
+                      </th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+
+            <div className="orderBtn text-center mt-4">
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                size="large"
+                className="placeOrderBtn"
+              >
+                PLACE ORDER
+              </Button>
             </div>
           </div>
         </form>

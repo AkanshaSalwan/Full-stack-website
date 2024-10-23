@@ -149,10 +149,10 @@ const Footer = () => {
                 </p>
                 <p>
                   <HeadphonesOutlinedIcon /> <strong>Call Us:</strong> (+91) -
-                  540-025-124553{" "}
+               888-888-888
                 </p>
                 <p>
-                  <EmailOutlinedIcon /> <strong>Email:</strong> sale@Nest.com
+                  <EmailOutlinedIcon /> <strong>Email:</strong> sale@FreshMart.com
                 </p>
                 <p>
                   <WatchLaterOutlinedIcon /> <strong>Hours:</strong> 10:00 -
